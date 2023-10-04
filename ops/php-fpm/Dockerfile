@@ -5,3 +5,5 @@ RUN set -ex \
     postgresql-dev
 
 RUN docker-php-ext-install pgsql pdo_pgsql
+
+RUN apk add shadow && usermod -u 1000 www-data && groupmod -g 1000 www-data
